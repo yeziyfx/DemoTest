@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    android:background="@color/white">
+    <include
+        style="@style/layout_title_bar_style"
+        layout="@layout/common_title_bar"/>
+    <GridView
+        android:id="@+id/gv_gridview_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:horizontalSpacing="0dp"
+        android:listSelector="@color/transparent"
+        android:cacheColorHint="@color/transparent"
+        android:numColumns="4"
+        />
+</LinearLayout>

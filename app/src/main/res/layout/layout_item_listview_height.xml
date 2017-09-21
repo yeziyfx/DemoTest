@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"     
+    >
+    <!-- 相对布局的高度设置为match_parent则可以正常显示了 -->
+    <ImageView 
+        android:id="@+id/iv_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/news_pic_default"/>
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_item"
+        android:text="竟然不在图片下面？"/>
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/iv_item"
+        android:layout_marginLeft="5dp"
+        android:layout_centerVertical="true"
+        android:visibility="visible"
+        >
+        <TextView 
+            android:id="@+id/tv_pic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="图片名称"/>
+        <TextView 
+            android:id="@+id/tv_pic_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:text="图片描述"/>
+    </LinearLayout>
+    <Button 
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="删除"
+        android:visibility="visible"/>
+
+</RelativeLayout>
+

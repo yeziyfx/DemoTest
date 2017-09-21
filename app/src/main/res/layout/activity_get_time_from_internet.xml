@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        style="@style/layout_title_bar_style"
+        layout="@layout/common_title_bar" />
+	<TextView 
+	    android:id="@+id/tv_time_internet"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="60dp"
+	    android:text="时间"/>
+    <Button
+        android:id="@+id/btn_get_time_internet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="获取网络时间" 
+        android:textColor="@color/color_white"
+        android:padding="10dp"
+        android:background="@drawable/bg_btn_theme_selector"/>
+
+</RelativeLayout>

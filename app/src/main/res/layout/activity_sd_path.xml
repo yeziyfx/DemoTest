@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include 
+        layout="@layout/common_title_bar"/>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        android:orientation="vertical">
+        <TextView 
+            android:id="@+id/tv_sd_path"
+            style="@style/common_tv_gray_a0_14"
+            android:text=""
+            />
+        <Button 
+            android:id="@+id/btn_sd_path"
+            style="@style/common_btn"
+            android:layout_marginTop="30dp"
+            android:text="获取理论SD卡路径"/>
+        <Button 
+            android:id="@+id/btn_second_path"
+            style="@style/common_btn"
+            android:layout_marginTop="30dp"
+            android:text="获取机身存储路径"/>
+    </LinearLayout>
+
+</LinearLayout>

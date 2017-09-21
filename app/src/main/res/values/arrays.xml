@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="function">
+        <item >自定义日历控件</item>
+        <item >GridView菜单</item>
+        <item >可点击部分文字的TextView</item>
+        <item >TabHost</item>
+        <item >播放视频</item>
+        <item >分页加载的ListView</item>
+        <item >可扩展列表ListView</item>
+        <item >解析HTML</item>
+        <item >网络可用性检测</item>
+        <item >SD卡路径</item>
+        <item >抢红包</item>
+        <item >条目滑动删除</item>
+        <item >下拉刷新</item>
+        <item >事件分发</item>
+        <item >double保留小数</item>
+        <item >item高度</item>
+        <item >异常模拟</item>
+        <item >Toast一直显示</item>
+        <item >Toast和Log</item>
+        <item >日期和秒数互转</item>
+        <item >GridView的item条目布局显示</item>
+        <item >ListView异步获取图片</item>
+        <item >生成xml文件</item>
+        <item >超级日志输出</item>
+        <item >获取网络时间</item>
+        <item >ViewPager展示</item>
+        <item >HttpUtil下载文件</item>
+        <item >多线程下载文件</item>
+        <item >ProgressBar焦点问题</item>
+        <item >按钮和布局的点击效果</item>
+        <item >屏幕信息</item>
+        <item >刷新旋转动画</item>
+        <item >Json标准测试</item>
+        <item >ListViewCheckBox多选</item>
+        <item >ListView EditText焦点</item>
+    </string-array>
+    <string-array name="name_array">
+        <item >叶飞翔</item>
+        <item >王滨滨</item>
+        <item >王玉昆</item>
+        <item >王玉娟</item>
+        <item >商亿</item>
+        <item >李灿灿</item>
+        <item >梁勇</item>
+        <item >董雪莹</item>
+        <item >袁玉华</item>
+        <item >权颖</item>
+        <item >梁楠</item>
+        <item >程茜</item>
+        <item >高志军</item>
+        <item >马海波</item>
+        <item >杨康</item>
+        <item >孙玉森</item>
+        <item >曾佳伦</item>
+        <item >丁博峰</item>
+        <item >郑秀涛</item>
+        <item >杨龙</item>
+        <item >刘中昌</item>
+        </string-array>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+        <LinearLayout 
+            style="@style/common_lin_item"
+             android:layout_centerVertical="true"
+             android:orientation="vertical">
+            
+        <TextView 
+            android:id="@+id/tv_title_item_pagination"
+            style="@style/common_tv_gray_32_16"
+            android:singleLine="true"
+            android:text="title"/>
+        <TextView 
+            android:id="@+id/tv_content_item_pagination"
+            style="@style/common_tv_gray_a0_14"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:text="content"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

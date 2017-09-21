@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/white">
+
+    <include
+        style="@style/layout_title_bar_style"
+        layout="@layout/common_title_bar" />
+
+    <LinearLayout style="@style/common_lin" >
+
+        <TextView
+            style="@style/common_tv_gray_a0_14"
+            android:text="生成的图片个数" />
+        <TextView
+            android:id="@+id/tv_write2xml"
+            style="@style/common_tv_gray_a0_14"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/color_theme"
+            android:text="生成的图片个数" />
+    </LinearLayout>
+	<View 
+	    style="@style/common_line_gray_f0"/>
+    <LinearLayout style="@style/common_lin" >
+
+        <TextView
+            style="@style/common_tv_gray_a0_14"
+            android:text="xml文件路径" />
+        <TextView
+            android:id="@+id/tv_path_create_xml"
+            style="@style/common_tv_gray_a0_14"
+            android:layout_marginLeft="10dp"
+            android:text="xml文件路径" 
+            android:textColor="@color/color_theme"/>
+    </LinearLayout>
+	<View 
+	    style="@style/common_line_gray_f0"/>
+    <Button
+        android:id="@+id/btn_create_xml"
+        style="@style/common_btn"
+        android:layout_marginTop="10dp"
+        android:text="生成xml文件" />
+
+</LinearLayout>

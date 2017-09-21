@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <EditText
+            android:id="@+id/et_downloadUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_bg"
+            android:hint="请输入下载地址" />
+
+        <EditText
+            android:id="@+id/et_downloadFileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_bg"
+            android:hint="请输入下载文件名" />
+
+        <EditText
+            android:id="@+id/et_downloadThreadNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_bg"
+            android:hint="请输入下载线程数" />
+
+        <ProgressBar
+            android:id="@+id/pb_downloadProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            style="?android:attr/progressBarStyleHorizontal"
+             android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_progressMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:layout_marginTop="20dp"
+             android:layout_gravity="center_horizontal"
+            android:text="进度信息"
+            android:textColor="@color/color_theme" />
+
+        <Button
+            android:id="@+id/btn_download_multi_thread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_btn_theme_selector"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="下载"
+            android:textColor="@color/color_gray_bg"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

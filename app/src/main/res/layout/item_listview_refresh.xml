@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        style="@style/common_rela">
+        <TextView 
+            android:id="@+id/tv_item_refresh"
+            style="@style/common_tv_gray_a0_14"
+            android:layout_centerVertical="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="text"/>
+    </RelativeLayout>
+	<View 
+	    style="@style/common_line_gray_f0"/>
+</LinearLayout>

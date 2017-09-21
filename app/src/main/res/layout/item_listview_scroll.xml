@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/common_rela" >
+
+        <TextView
+            android:id="@+id/tv_owner_item_scroll"
+            style="@style/common_tv_gray_a0_14"
+            android:layout_centerVertical="true"
+            android:text="抢红包者"
+            android:textColor="@color/color_theme_light" />
+
+        <TextView
+            style="@style/common_tv_gray_a0_14"
+            android:layout_centerInParent="true"
+            android:text="抢到了" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" >
+
+            <TextView
+                android:id="@+id/tv_money_item_scroll"
+                style="@style/common_tv_gray_a0_14"
+                android:text="money"
+                android:textColor="@color/red" />
+            <TextView
+                style="@style/common_tv_gray_a0_14"
+                android:layout_marginLeft="5dp"
+                android:text="元"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View style="@style/common_line_gray_f0" />
+
+</LinearLayout>

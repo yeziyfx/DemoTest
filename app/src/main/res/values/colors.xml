@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <!-- 主题色 -->
+    <color name="color_theme">#08B1FF</color>
+    <color name="color_theme_light">#cc08B1FF</color>
+    <!-- 背景颜色灰色 -->
+    <color name="color_gray_bg">#f0f0f0</color>
+    <!-- 白色 -->
+    <color name="color_white">#ffffff</color>
+    <color name="white">#ffffff</color>
+    <!-- 淡黑色 -->
+    <color name="color_black_light">#ec000000</color>
+    <color name="red">#aaff1212</color>
+    <color name="red_light">#ff1212</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray_32">#323232</color>
+    <color name="gray_a0">#a0a0a0</color>
+    <color name="gray_d0">#d0d0d0</color>
+    <color name="gray_e0">#e0e0e0</color>
+    <color name="gray_f0">#f0f0f0</color>
+</resources>

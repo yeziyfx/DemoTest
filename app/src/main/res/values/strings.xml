@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">工具大全</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="url_download_default">http://172.16.0.151:8080/notesearch4.2/SmartSchoolTeacher.apk</string>
+    <string name="url_download_default_teacher">http://123.57.218.63:8899/app_download/35//SmartSchoolTeacher.apk</string>
+    <string name="url_download_default_parent">http://123.57.218.63:8899/app_download/36//SmartSchool.apk</string>
+
+</resources>

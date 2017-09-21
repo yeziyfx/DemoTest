@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray_bg"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/layout_title"
+        style="@style/layout_title_bar_style"
+        layout="@layout/common_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" 
+            android:gravity="center"
+             android:background="@color/color_white"
+            >
+
+            <TextView
+                android:id="@+id/tv_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="展示结果" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="1dp"
+            android:padding="5dp" 
+             android:background="@color/color_white">
+        <EditText
+                android:id="@+id/et_data_calendar_to_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_bg_et_theme1"
+                android:hint="请输入" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="1dp"
+            android:padding="5dp" 
+             android:background="@color/color_white">
+
+            <Button
+                android:id="@+id/btn_to_time"
+                style="@style/btn_double_style"
+                android:layout_gravity="center_vertical"
+                android:text="日期转换为秒数" />
+
+            <Button
+                android:id="@+id/btn_to_date"
+               style="@style/btn_double_style"
+               android:layout_gravity="center_vertical"
+                android:text="秒数转换为日期" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
