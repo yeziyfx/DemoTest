@@ -53,6 +53,7 @@ public class HttpUtilActivity extends BaseActivity implements OnClickListener{
 	@Override
 	protected void init() {
 		setContentView(R.layout.activity_httputil);
+		setCommonTitleTitle("HttpUtil下载文件");
 	}
 
 	@Override
@@ -69,6 +70,7 @@ public class HttpUtilActivity extends BaseActivity implements OnClickListener{
 	@Override
 	protected void initListener() {
 		m_btnDownload.setOnClickListener(this);
+		setCommonTitleBackListener();
 	}
 
 	@Override
@@ -77,7 +79,7 @@ public class HttpUtilActivity extends BaseActivity implements OnClickListener{
 		switch (v.getId()) {
 		case R.id.btn_download_httputil:
 			url = m_etUrl.getText().toString().trim();
-			savePath = Environment.getExternalStorageDirectory() + "/test.apk";
+			savePath = Environment.getExternalStorageDirectory() + "/11test.jpg";
 			testConnection();
 			break;
 
@@ -153,7 +155,7 @@ public class HttpUtilActivity extends BaseActivity implements OnClickListener{
 						fos.close();
 						LogUtil.i(TAG, "fos");
 					} else {
-//						LogUtil.i(TAG, "conn.getResponseCode()=" + conn.getResponseCode());
+						LogUtil.i(TAG, "conn.getResponseCode()=" + conn.getResponseCode());
 					}
 					if(currPosition<endPosition)
 					{

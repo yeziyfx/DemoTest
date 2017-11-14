@@ -80,6 +80,7 @@
     	<activity android:name="com.demo.demotest.ui.ClickSpanTextViewActivity"></activity>
     	<activity android:name="com.demo.demotest.GridViewMenuActivity"></activity>
     	<activity android:name="com.demo.demotest.activity.CalendarActivity"></activity>
+    	<activity android:name="com.demo.demotest.activity.ItemRefreshActivity"></activity>
     </application>
 
 </manifest>

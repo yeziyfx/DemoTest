@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_gray_bg"
+    android:background="@color/white"
     android:orientation="vertical" >
 
     <include
@@ -29,6 +29,15 @@
                 android:text="展示结果" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/tv_tip_date_to_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/yellow"
+            android:textSize="14sp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"

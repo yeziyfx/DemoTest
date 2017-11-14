@@ -78,6 +78,7 @@ public class HomeActivity extends BaseActivity{
 		String[] strArr=getResources().getStringArray(R.array.function);
 		m_dataList=Arrays.asList(strArr);
 		m_clazzs=new Class[]{
+				ItemRefreshActivity.class,
 				CalendarActivity.class,
 			GridViewMenuActivity.class,
 			ClickSpanTextViewActivity.class,

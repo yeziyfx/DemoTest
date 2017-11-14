@@ -17,6 +17,7 @@ import com.demo.demotest.base.BaseFragmentActivity;
 import com.demo.demotest.fragment.Fragment1;
 import com.demo.demotest.fragment.Fragment2;
 import com.demo.demotest.fragment.Fragment3;
+import com.demo.demotest.view.LazyViewPager;
 
 /**
  * 
@@ -29,7 +30,7 @@ import com.demo.demotest.fragment.Fragment3;
  */
 public class ViewPagerActivity extends BaseFragmentActivity {
 
-	private ViewPager m_viewPager;
+	private LazyViewPager m_viewPager;
 	private List<Fragment> m_fragmentList;
 	private ViewPagerAdapter m_adapter;
 	@Override
@@ -39,7 +40,7 @@ public class ViewPagerActivity extends BaseFragmentActivity {
 
 	@Override
 	protected void initView() {
-		m_viewPager = (ViewPager) findViewById(R.id.viewpager);
+		m_viewPager = (LazyViewPager) findViewById(R.id.viewpager);
 		setTitleBarTitle("viewpager+fragment");
 	}
 
@@ -62,7 +63,7 @@ public class ViewPagerActivity extends BaseFragmentActivity {
 		m_viewPager.setOnPageChangeListener(new ViewPagerChangeListener());
 
 	}
-	class ViewPagerChangeListener implements OnPageChangeListener
+	class ViewPagerChangeListener implements LazyViewPager.OnPageChangeListener
 	{
 		/**
 		 * state:网上通常说法:1表示正在滑动，2表示滑动完毕 ，0表示什么都没做，就是停在那

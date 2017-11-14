@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="function">
+        <item >更新单一条目</item>
         <item >自定义日历控件</item>
         <item >GridView菜单</item>
         <item >可点击部分文字的TextView</item>

@@ -14,7 +14,7 @@ import android.widget.ListView;
 import com.demo.demotest.R;
 import com.demo.demotest.ViewPagerActivity;
 import com.demo.demotest.adapter.ListViewFragmentAdapter;
-
+import com.demo.demotest.util.LogSuperUtil;
 
 public class Fragment1 extends Fragment {
 	private ViewPagerActivity m_activity;
@@ -25,10 +25,12 @@ public class Fragment1 extends Fragment {
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
 		m_activity=(ViewPagerActivity) activity;
+		LogSuperUtil.i("mychar","Fragment1--");
 	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //		View contentView= inflater.inflate(R.layout.fragment_1, container, false);
+		LogSuperUtil.i("mychar","UI创建");
 		View contentView= View.inflate(m_activity,R.layout.fragment_1, null);
 		m_lv = (ListView) contentView.findViewById(R.id.lv_first_fragment);
 		initData();
@@ -43,5 +45,10 @@ public class Fragment1 extends Fragment {
 		}
 		m_adapter = new ListViewFragmentAdapter(m_activity, m_dataList);
 		m_lv.setAdapter(m_adapter);
+	}
+	@Override
+	public void onDestroyView() {
+		LogSuperUtil.i("mychar","UI销毁");
+		super.onDestroyView();
 	}
 }

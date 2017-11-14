@@ -89,7 +89,17 @@ public class ContactService {
 			LogUtil.i("exception", "ContactService-getContacts出错啦,code="+conn.getResponseCode());
 		}
 		return list;
-	} 
+	}
+	public static List<Contact> getContactsTest() throws Exception
+	{
+		List<Contact> list=new ArrayList<Contact>();
+		Contact contact=new Contact();
+		contact.id=11;
+		contact.name="woqu";
+		contact.imageUrl="http://192.168.103.244:8010/FileUpload/download.ashx?href=2017\\11\\13\\18210039043_636461409112607111.jpg";
+		list.add(contact);
+		return list;
+	}
 	/**
 	 * (暂时不用)
 	 * @param path 网络路径

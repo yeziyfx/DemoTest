@@ -67,7 +67,7 @@ public class ListViewAsyncActivity extends BaseActivity implements OnClickListen
 	protected void init() {
 		m_context=this;
 		setContentView(R.layout.activity_listview_async);
-		
+		setCommonTitleTitle("异步加载图片");
 	}
 	@Override
 	protected void initView() {
@@ -88,7 +88,7 @@ public class ListViewAsyncActivity extends BaseActivity implements OnClickListen
 			public void run()
 			{
 				try {
-					List data=ContactService.getContacts();
+					List data=ContactService.getContactsTest();
 					handler.sendMessage(handler.obtainMessage(22, data));
 				} catch (Exception e) {
 					 throw new RuntimeException(e);
@@ -100,5 +100,6 @@ public class ListViewAsyncActivity extends BaseActivity implements OnClickListen
 	@Override
 	protected void initListener() {
 		m_btnDeleteImages.setOnClickListener(this);
+		setCommonTitleBackListener();
 	}
 }

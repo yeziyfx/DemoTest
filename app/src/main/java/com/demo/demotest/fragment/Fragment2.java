@@ -2,6 +2,7 @@ package com.demo.demotest.fragment;
 
 import com.demo.demotest.R;
 import com.demo.demotest.ViewPagerActivity;
+import com.demo.demotest.util.LogSuperUtil;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ public class Fragment2 extends Fragment {
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
 		m_activity=(ViewPagerActivity) activity;
+		LogSuperUtil.i("mychar","Fragment2--");
 	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.demo.demotest.R;
 import com.demo.demotest.ViewPagerActivity;
-
+import com.demo.demotest.util.LogSuperUtil;
 
 public class Fragment3 extends Fragment {
 	private ViewPagerActivity m_activity;
@@ -18,6 +18,7 @@ public class Fragment3 extends Fragment {
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
 		m_activity=(ViewPagerActivity) activity;
+		LogSuperUtil.i("mychar","Fragment3--");
 	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
