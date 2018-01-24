@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.demo.demotest.util.Constants;
@@ -23,7 +24,7 @@ import com.demo.demotest.util.LogSuperUtil;
 public class LoopViewPager extends FrameLayout implements ViewPager.OnPageChangeListener {
 
     private ViewPager mViewPager;
-    private ViewPagerIndicator mIndicator;
+    private IndicatorView mIndicatorView;
     private BannerPagerAdapter mAdapter;
     private Context mContext;
     private int mCurrentPosition;
@@ -60,13 +61,9 @@ public class LoopViewPager extends FrameLayout implements ViewPager.OnPageChange
         lp.width = ViewPager.LayoutParams.MATCH_PARENT;
         lp.height = ViewPager.LayoutParams.MATCH_PARENT;
         mViewPager.setLayoutParams(lp);
-
+        //add the viewpager and the indicator to the container.
+        addView(mViewPager);
         //initialize the indicator
-        mIndicator = new ViewPagerIndicator(mContext);
-        LayoutParams indicatorlp = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
-        indicatorlp.gravity = Gravity.BOTTOM | Gravity.CENTER;
-        indicatorlp.bottomMargin = 20;
-        mIndicator.setLayoutParams(indicatorlp);
         isFirstVisible = true;
         mViewPager.setPageTransformer(false,null);
     }
@@ -81,7 +78,10 @@ public class LoopViewPager extends FrameLayout implements ViewPager.OnPageChange
     private int mIndictorCount;
     public void setAdapter(BannerPagerAdapter adapter){
         mIndictorCount=adapter.getCount()-2;
-        mIndicator.setItemCount(mIndictorCount);
+        if(mIndicatorView!=null)
+        {
+            mIndicatorView.setItemCount(mIndictorCount);
+        }
         mViewPager.setAdapter(adapter);
         mViewPager.addOnPageChangeListener(this);
 
@@ -90,23 +90,36 @@ public class LoopViewPager extends FrameLayout implements ViewPager.OnPageChange
             @Override
             public void update(int count) {
                 mIndictorCount=count;
-                mIndicator.setItemCount(count);
+                if(mIndicatorView!=null)
+                {
+                    mIndicatorView.setItemCount(mIndictorCount);
+                }
                 mViewPager.setCurrentItem(1);
 //                mIndicator.setPositionAndOffset(0,0);
             }
         });
-
-        //add the viewpager and the indicator to the container.
-        addView(mViewPager);
-        addView(mIndicator);
-
         //start the auto-rolling task if needed
         if(isAutoRolling){
             postDelayed(mAutoRollingTask,mAutoRollingTime);
         }
 
     }
-
+    /**
+     *
+     * @param indicatorView 根布局是线性布局
+     * @param bottomMargin
+     * @param gravity
+     */
+    public void setIndicator(IndicatorView indicatorView,int bottomMargin,int gravity)
+    {
+        this.mIndicatorView=indicatorView;
+        LayoutParams indicatorlp = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        gravity=gravity<0?Gravity.BOTTOM | Gravity.CENTER:gravity;
+        indicatorlp.gravity = gravity;
+        indicatorlp.bottomMargin = bottomMargin;//20
+        mIndicatorView.setLayoutParams(indicatorlp);
+        addView(mIndicatorView);
+    }
     /**
      * This runnable decides the viewpager should roll to next page or wait.
      */
@@ -158,13 +171,10 @@ public class LoopViewPager extends FrameLayout implements ViewPager.OnPageChange
         }
 
     }
-    private boolean mIsToLeft=false;
-    private int mPositionOffsetPixels;
-    //onPageScrollStateChanged中state==ViewPager.SCROLL_STATE_DRAGGING时才会调用此方法
+
+
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        mIsToLeft=(positionOffsetPixels-mPositionOffsetPixels)<0;
-        mPositionOffsetPixels=positionOffsetPixels;
         LogSuperUtil.i(Constants.LogTag.theme_recommand,"position="+position
                 +",offset="+positionOffset+",positionOffsetPixels="+positionOffsetPixels);
         int indicatorIndex=position-1;//除去左右边界时的逻辑
@@ -187,21 +197,12 @@ public class LoopViewPager extends FrameLayout implements ViewPager.OnPageChange
         if(position==0)//只要第二个页面一往左滑，position立刻就变成0了，这么神奇？
         {
             indicatorIndex=0;//需要手动设置
-            //会走这里吗？
             if(positionOffset<0.4)//优化UI效果，过半换点
             {
                 indicatorIndex=mIndictorCount-1;
             }
             positionOffset=0;
         }
-//        if(position==1&&mIsToLeft)
-//        {
-//            positionOffset=0;
-//            if(positionOffset>0.6)//优化UI效果，过半换点
-//            {
-//                indicatorIndex=mIndictorCount-1;
-//            }
-//        }
         setIndicator(indicatorIndex,positionOffset);
     }
 
@@ -217,7 +218,7 @@ public class LoopViewPager extends FrameLayout implements ViewPager.OnPageChange
      */
     private void setIndicator(int indicatorIndex,float offset){
         LogSuperUtil.i(Constants.LogTag.theme_recommand,"indicatorIndex="+indicatorIndex+",offset="+offset);
-        mIndicator.setPositionAndOffset(indicatorIndex,offset);
+        mIndicatorView.setPositionAndOffset(indicatorIndex,offset);
     }
     /**
      * 每当当前窗口被隐藏、至于后台时，Runnable就会停止并被取消，防止内存泄漏。

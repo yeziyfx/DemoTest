@@ -1,10 +1,12 @@
 package com.demo.demotest.activity;
 
+import android.view.Gravity;
 import android.view.View;
 
 import com.demo.demotest.R;
 import com.demo.demotest.adapter.HomeThemePagerAdapter;
 import com.demo.demotest.bannerViewPager.BannerViewPager;
+import com.demo.demotest.bannerViewPager.LoopIndicator;
 import com.demo.demotest.bannerViewPager.LoopViewPager;
 import com.demo.demotest.bannerViewPager.OnPageClickListener;
 import com.demo.demotest.base.BaseCommonActivity;
@@ -32,7 +34,11 @@ public class BannerViewPagerActivity extends BaseCommonActivity {
     protected void initView() {
         setCommonTitleTitle("可循环滚动的轮播图");
         mViewPager= (LoopViewPager) findViewById(R.id.viewpager_home);
-        mViewPager.setAutoRolling(true);
+        LoopIndicator loopIndicator=new LoopIndicator(m_context);
+        loopIndicator.setIndicatorNormalResId(R.drawable.ic_point_normal);
+        loopIndicator.setIndicatorSelectResId(R.drawable.ic_point_selected);
+        mViewPager.setIndicator(loopIndicator,20, Gravity.BOTTOM|Gravity.CENTER);
+        mViewPager.setAutoRolling(false);
     }
     @Override
     protected void initData() {

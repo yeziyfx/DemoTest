@@ -1,6 +1,8 @@
 package com.demo.demotest.bannerViewPager;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
@@ -17,13 +19,13 @@ import com.demo.demotest.R;
  * @version 1.0.0
  * @date 2016-10-03
  */
-public class ViewPagerIndicator extends LinearLayout {
+public class LoopIndicator extends IndicatorView {
     private static final int DRFAULT_ITEMCOUNT = 5;
-    private static final int DEFAULT_RADIUS = 10;
+    private static final int DEFAULT_RADIUS = 16;
     private static final int DEFAULT_PADDING = 15;
 
     private Context mContext;
-    private Paint mPaint;
+//    private Paint mPaint;
     private View mMoveView;
     private int mCurrentPosition = 0;
     private float mPositionOffset;
@@ -33,17 +35,18 @@ public class ViewPagerIndicator extends LinearLayout {
     //the distance from the left side of the previous item to the left side of the next item.
     private int mDistanceBtwItem = mRadius * 2 + mPadding;
 
-    private int mDefaultColor=getResources().getColor(R.color.gray_a0);
-    private int mSelectColor=getResources().getColor(R.color.white);
-    public ViewPagerIndicator(Context context) {
+    private int mNormalResId=R.drawable.ic_point_normal;
+    private int mSelectResId=R.drawable.ic_point_selected;
+    private Bitmap mBitmapNormal,mBitmapSelect;
+    public LoopIndicator(Context context) {
         this(context, null);
     }
 
-    public ViewPagerIndicator(Context context, AttributeSet attrs) {
+    public LoopIndicator(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ViewPagerIndicator(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LoopIndicator(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.mContext = context;
         init();
@@ -52,10 +55,11 @@ public class ViewPagerIndicator extends LinearLayout {
     private void init() {
         setOrientation(LinearLayout.HORIZONTAL);
         setWillNotDraw(false);
-        mPaint = new Paint();
-        mPaint.setAntiAlias(true);
-        mPaint.setColor(mDefaultColor);
-
+//        mPaint = new Paint();
+//        mPaint.setAntiAlias(true);
+//        mPaint.setColor(mDefaultColor);
+        mBitmapNormal= BitmapFactory.decodeResource(getResources(),mNormalResId);
+        mBitmapSelect=BitmapFactory.decodeResource(getResources(),mSelectResId);
         mMoveView = new MoveView(mContext);
         addView(mMoveView);
     }
@@ -76,7 +80,16 @@ public class ViewPagerIndicator extends LinearLayout {
         this.mDistanceBtwItem = mRadius * 2 + mPadding;
         requestLayout();
     }
-
+    public void setIndicatorNormalResId(int drawableResId)
+    {
+        mNormalResId=drawableResId;
+        mBitmapNormal= BitmapFactory.decodeResource(getResources(),mNormalResId);
+    }
+    public void setIndicatorSelectResId(int drawableResId)
+    {
+        mSelectResId=drawableResId;
+        mBitmapSelect=BitmapFactory.decodeResource(getResources(),mSelectResId);
+    }
     public void setPositionAndOffset(int position,float offset){
         this.mCurrentPosition = position;
         this.mPositionOffset  =offset;
@@ -103,8 +116,7 @@ public class ViewPagerIndicator extends LinearLayout {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         for(int i = 0;i < mItemCount;i++){
-            canvas.drawCircle(mRadius + mPadding + mRadius * i *2 + mPadding * i,
-                    mRadius + mPadding,mRadius,mPaint);
+            canvas.drawBitmap(mBitmapNormal,mPadding*(i+1)+i*2*mRadius,mPadding,null);
         }
 
     }
@@ -114,9 +126,9 @@ public class ViewPagerIndicator extends LinearLayout {
 
         public MoveView(Context context) {
             super(context);
-            mPaintView = new Paint();
-            mPaintView.setAntiAlias(true);
-            mPaintView.setColor(mSelectColor);
+//            mPaintView = new Paint();
+//            mPaintView.setAntiAlias(true);
+//            mPaintView.setColor(mSelectColor);
         }
 
         @Override
@@ -128,7 +140,7 @@ public class ViewPagerIndicator extends LinearLayout {
         @Override
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
-            canvas.drawCircle(mRadius,mRadius,mRadius,mPaintView);
+            canvas.drawBitmap(mBitmapSelect,0,0,null);
         }
     }
 }
