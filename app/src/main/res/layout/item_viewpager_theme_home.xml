@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:round_rect_iv="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:background="@drawable/shape_gray_f5">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.demo.demotest.view.RoundRectImageView
+            android:id="@+id/iv_item_viewpager_theme_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            round_rect_iv:radius="6px"
+            />
+        <TextView
+            android:id="@+id/tv_item_viewpager_theme_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/gray_32"/>
+    </RelativeLayout>
+
+</LinearLayout>

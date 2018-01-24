@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="function">
+        <item >可循环的轮播图</item>
+        <item >EditText的图片</item>
+        <item >图片尺寸自适应</item>
         <item >更新单一条目</item>
         <item >自定义日历控件</item>
         <item >GridView菜单</item>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <include
+        layout="@layout/common_title_bar"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@drawable/shape_gray_f5">
+        <ImageView
+            android:id="@+id/iv_empty_edittext_drawable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/empty_cnki_articles"/>
+        <EditText
+            android:id="@+id/et_edittext_drawable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:layout_toLeftOf="@id/iv_empty_edittext_drawable"
+            android:hint="请输入搜索关键字"
+            android:textCursorDrawable="@null"
+            android:textColorHint="@color/gray_e0"
+            android:textSize="12sp"
+            android:textColor="@color/gray_32"
+            android:background="@null"/>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -40,7 +40,17 @@ public class LogSuperUtil {
 	    Log.d(tag,  tip+"->"+message);
 	}
     }
-    private static String generateTag(StackTraceElement stack)
+	private static String generateTag(StackTraceElement stack) {
+		String tagFormat = "%s.%s%s";//%s.%s(Line:%d)
+		String tag = "";
+		String className = stack.getClassName();
+		String methodName = stack.getMethodName();
+		String strStack=stack.toString();
+		tag = String.format(tagFormat, className, methodName,
+				strStack.substring(strStack.lastIndexOf("(")));//stack.getLineNumber()
+		return tag;
+	}
+    private static String generateTag2(StackTraceElement stack)
     {
 	String tagFormat="%s.%s(Line:%d)";
 	String tag="";

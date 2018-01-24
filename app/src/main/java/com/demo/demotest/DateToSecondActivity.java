@@ -20,6 +20,7 @@ public class DateToSecondActivity extends BaseActivity implements OnClickListene
 	private Button m_btnToTime;
 	private EditText m_etData;
 	private TextView mTvTip;
+	private Button mBtnClear;
 	@Override
 	protected void init() {
 		setContentView(R.layout.activity_date_to_second);
@@ -35,6 +36,7 @@ public class DateToSecondActivity extends BaseActivity implements OnClickListene
 		m_btnToTime=(Button) findViewById(R.id.btn_to_time);
 		m_tvResult = (TextView) findViewById(R.id.tv_result);
 		mTvTip = (TextView) findViewById(R.id.tv_tip_date_to_second);
+		mBtnClear = (Button) findViewById(R.id.btn_clear_date_to_second);
 	}
 
 	@Override
@@ -83,6 +85,7 @@ public class DateToSecondActivity extends BaseActivity implements OnClickListene
 
 			}
 		});
+		mBtnClear.setOnClickListener(this);
 	}
 
 	@Override

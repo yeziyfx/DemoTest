@@ -40,6 +40,7 @@ import com.demo.demotest.VideoPlayerActivity;
 import com.demo.demotest.ViewPagerActivity;
 import com.demo.demotest.Write2XMLActivity;
 import com.demo.demotest.adapter.HomeGridViewAdapter;
+import com.demo.demotest.bannerViewPager.BannerViewPager;
 import com.demo.demotest.base.BaseActivity;
 import com.demo.demotest.ui.ClickSpanTextViewActivity;
 
@@ -78,6 +79,9 @@ public class HomeActivity extends BaseActivity{
 		String[] strArr=getResources().getStringArray(R.array.function);
 		m_dataList=Arrays.asList(strArr);
 		m_clazzs=new Class[]{
+				BannerViewPagerActivity.class,
+				EditTextDrawableActivity.class,
+				ImageViewSizeAutoActivity.class,
 				ItemRefreshActivity.class,
 				CalendarActivity.class,
 			GridViewMenuActivity.class,

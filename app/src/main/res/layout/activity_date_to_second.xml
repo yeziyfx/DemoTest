@@ -26,7 +26,7 @@
                 android:id="@+id/tv_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="展示结果" />
+                android:text="" />
         </LinearLayout>
 
         <TextView
@@ -49,11 +49,17 @@
                 android:id="@+id/et_data_calendar_to_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_bg_et_theme1"
                 android:hint="请输入" />
         </LinearLayout>
-
+        <Button
+            android:id="@+id/btn_clear_date_to_second"
+            style="@style/btn_content_style"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:text="清空" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"

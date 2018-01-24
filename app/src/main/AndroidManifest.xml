@@ -81,6 +81,9 @@
     	<activity android:name="com.demo.demotest.GridViewMenuActivity"></activity>
     	<activity android:name="com.demo.demotest.activity.CalendarActivity"></activity>
     	<activity android:name="com.demo.demotest.activity.ItemRefreshActivity"></activity>
+    	<activity android:name="com.demo.demotest.activity.ImageViewSizeAutoActivity"></activity>
+    	<activity android:name="com.demo.demotest.activity.EditTextDrawableActivity"></activity>
+    	<activity android:name="com.demo.demotest.activity.BannerViewPagerActivity"></activity>
     </application>
 
 </manifest>
